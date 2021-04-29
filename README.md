@@ -1,9 +1,6 @@
 # Ultra_Fast_Lane_Detection_TensorRT
 An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to accelerate. our model support for int8, dynamic input and profiling. (TRT-hackathon2021)
 
-# Ultra_Fast_Lane_Detection_TensorRT
-An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to accelerate. our model support for int8, dynamic input and profiling. (TRT-hackathon2021)
-
 
 1. build onnx
 
