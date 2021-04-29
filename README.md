@@ -1,6 +1,6 @@
 # Ultra_Fast_Lane_Detection_TensorRT
 An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to accelerate. our model support for int8, dynamic input and profiling. (TRT-hackathon2021)
-这是一个基于TensorRT加速UFLD的repo，对源码和论文感兴趣的请参见：
+这是一个基于TensorRT加速UFLD的repo，对源码和论文感兴趣的请参见：https://github.com/cfzd/Ultra-Fast-Lane-Detection
 
 
 1. build onnx（将训练好的pth/pt模型转换为onnx）
