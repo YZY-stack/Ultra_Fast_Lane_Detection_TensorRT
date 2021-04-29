@@ -4,8 +4,7 @@ An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to a
 
 1. build onnx（将训练好的pth/pt模型转换为onnx）<br/>
 ---
-
-<br/>static（生成静态onnx模型）:<br/> python3 torch2onnx.py onnx_dynamic_int8/configs/tusimple_4.py --test_model /home/stevenyan/TRT_python/UFLD_torch2trt/tusimple_18.pth<br/> dynamic（生成支持动态输入的onnx模型）:
+static（生成静态onnx模型）:<br/> python3 torch2onnx.py onnx_dynamic_int8/configs/tusimple_4.py --test_model /home/stevenyan/TRT_python/UFLD_torch2trt/tusimple_18.pth<br/> dynamic（生成支持动态输入的onnx模型）:
 first: vim torch2onnx.py<br/>
 second: change "fix" from "True" to "False"<br/>
 last: python3 torch2onnx.py onnx_dynamic_int8/configs/tusimple_4.py --test_model /home/stevenyan/TRT_python/UFLD_torch2trt/tusimple_18.pth<br/>
