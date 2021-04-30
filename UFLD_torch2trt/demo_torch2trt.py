@@ -1,3 +1,4 @@
+import argparse
 from torch2trt import TRTModule
 import cv2
 import torch
