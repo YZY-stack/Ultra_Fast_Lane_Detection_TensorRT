@@ -9,6 +9,13 @@ def compare(time_torch, time_trt, out_torch, out_trt):
     Average_diff = np.abs(out_torch.cpu() - out_trt[0].reshape(101, 56, 4)) / np.abs(out_torch.cpu())
     print(Average_diff)
     # print("Acc_Loss(Order of magnitude):", np.sum(Average_diff) / len(Average_diff))
+    
+    
+def compare_torch2trt(time_torch, time_trt, out_torch, out_trt):
+    print(f'Speedup: {time_torch / time_trt}')
+    Average_diff = np.abs(out_torch.cpu() - out_trt.cpu()) / np.abs(out_torch.cpu())
+    print(Average_diff)
+    # print("Acc_Loss(Order of magnitude):", np.sum(Average_diff) / len(Average_diff))
 
 
 def set_config():
@@ -43,7 +50,7 @@ if __name__ == "__main__":
     if torch2trt:
         torch_time, torch_out = inference_with_pytorch(pth_path, data_path)
         torch2trt_time, torch2trt_out = inference_with_torch2trt(torch2trt_path, data_path)
-        compare(torch_time, torch2trt_time, torch_out, torch2trt_out)
+        compare_torch2trt(torch_time, torch2trt_time, torch_out, torch2trt_out)
     else:
         torch_time, torch_out = inference_with_pytorch(pth_path, data_path)
         trt_time, trt_out = inference_with_trt(trt_path, data_path, dynamic_input)
