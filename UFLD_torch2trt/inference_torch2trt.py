@@ -18,21 +18,22 @@ def preprocessing(img):
     return img
 
 
-def inference_with_torch2trt(trt_file_path):
+def inference_with_torch2trt(trt_file_path, data_path):
     model_trt = TRTModule()
     model_trt.load_state_dict(torch.load(trt_file_path))
 
     time_torch = 0
     for i in range(10):
-        torch.cuda.synchronize()
-        path = "/home/stevenyan/Ultra-Fast-Lane-Detection-ori/Inference/5.jpg"
+        path = data_path
         frame = cv2.imread(path)
-        img = preprocessing(frame)
-        img = img.unsqueeze(0).cuda()
+        img = preprocessing(frame).cuda()
+        img = img.unsqueeze(0)
         t3 = time.time()
         with torch.no_grad():
             torch_outputs = model_trt(img)
+        torch_outputs[0].data.cpu().numpy()
         t4 = time.time()
         time_torch = t4 - t3
-    print('Inference time with Pytorch', time_torch * 10)
+        time_torch = time_torch + time_torch
+    print("Inference time with torch2trt = %.3f ms" % (time_torch * 1000))
     return time_torch, torch_outputs
