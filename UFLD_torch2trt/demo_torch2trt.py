@@ -74,30 +74,5 @@ def demo_with_torch2trt(trt_file_path):
     cv2.destroyAllWindows()
 
 
-def inference_with_torch2trt(trt_file_path):
-    model_trt = TRTModule()
-    model_trt.load_state_dict(torch.load(trt_file_path))
-    row_anchor = tusimple_row_anchor
-    img_w, img_h = 1280, 720
-    data_root = "/home/stevenyan/Ultra-Fast-Lane-Detection-ori/Inference/5.jpg"
-
-    img_transforms = transforms.Compose([
-        transforms.Resize((288, 800)),
-        transforms.ToTensor(),
-        transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
-    ])
-
-    for i in range(10):
-        key = cv2.waitKey(1)
-        if key == ord("q"):
-            break
-        img_ori = cv2.imread(data_root)
-        img = cv2.cvtColor(img_ori, cv2.COLOR_BGR2RGB)
-        img_ = PIL.Image.fromarray(img)
-        imgs = img_transforms(img_)
-        imgs = imgs.unsqueeze(0)
-        imgs = imgs.cuda()
-
-        t1 = time.time()
-        with torch.no_grad():
-            out = model_trt(imgs)
+if __name__ == "__main__":
+    demo_with_torch2trt()
