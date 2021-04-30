@@ -84,4 +84,8 @@ def set_config():
 
     
 if __name__ == "__main__":
-    demo_with_torch2trt()
+    configs = set_config()
+    trt_path = configs.trt_path
+    data_path = configs.data_path
+
+    demo_with_torch2trt(trt_path, data_path)
