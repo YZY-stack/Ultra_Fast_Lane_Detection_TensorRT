@@ -64,7 +64,7 @@ python3 export_trt.py
 ```
 #### torch2trt 预测demo (可视化)
 ```
-python3 demo_with_torch2trt.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG
+python3 demo_torch2trt.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG
 ```
 
 ## 三. C++ TensorRT API
