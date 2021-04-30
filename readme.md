@@ -61,7 +61,7 @@ python3 export_trt.py
 ```
 #### torch2trt 预测
 （"torch2trt is an easy tool to convert pytorch model to tensorrt, you can check model details here: https://github.com/NVIDIA-AI-IOT/torch2trt"）<br/>
- (torch2trt 是一个易于使用的PyTorch到TensorRT转换器) <br/>
+（torch2trt 是一个易于使用的PyTorch到TensorRT转换器）<br/>
 ```
 python3 demo_with_torch2trt.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG
 ```
