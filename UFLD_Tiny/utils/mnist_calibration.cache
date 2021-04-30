@@ -1,0 +1,82 @@
+TRT-7000-EntropyCalibration2
+input.1: 3c6966a5
+127: 3c298ff7
+128: 3b5df2ba
+129: 3b5df2ba
+130: 3b5df2ba
+131: 3bd8b106
+132: 3b5d4402
+133: 3b151529
+134: 3b5e7f99
+135: 3bbe2fc8
+136: 3b936c4c
+137: 3b840b6f
+138: 3bb62876
+139: 3b44a09e
+140: 3b1f11fd
+141: 3b5c9d1f
+142: 3b87e6e8
+143: 3bd1e091
+144: 3bd1e091
+145: 3bed89d1
+146: 3c3c2f3a
+147: 3b7fc3b6
+148: 3b636566
+149: 3c2c5bd4
+150: 3b248a2b
+151: 3b69ad12
+152: 3c749c21
+153: 3b74d13d
+154: 3c0c0a0a
+155: 3c2a12fa
+156: 3ade8c52
+157: 3b74846d
+158: 3c133ae7
+159: 3c19d149
+160: 3c0e6787
+161: 3c1f198d
+162: 3c475aa0
+163: 3c020fdd
+164: 3bc506df
+165: 3c5efda5
+166: 3b152a0b
+167: 3b4bbbdd
+168: 3c5adf69
+169: 3c4ba73f
+170: 3bcb724d
+171: 3c4472d7
+172: 3c03f7bf
+173: 3b837231
+174: 3c58ce13
+175: 3c51b338
+176: 3c4474b3
+177: 3b98ca6b
+178: 3c1a27de
+179: 3bdc38ad
+180: 3b06c3e8
+181: 3c59fb33
+182: 3ad771f3
+183: 3c198c73
+184: 3cb0b2f4
+185: 3c6782e0
+186: 3bcc34f8
+187: 3be23788
+188: 3be23788
+189: 3b241ede
+190: 3d46f62c
+191: 3d4323f7
+192: 3d549149
+193: 3e3bfc93
+195: 3e3bfc93
+(Unnamed Layer* 69) [Constant]_output: 3a0ac72c
+(Unnamed Layer* 70) [Matrix Multiply]_output: 3dd67f34
+(Unnamed Layer* 71) [Constant]_output: 38a25c2e
+(Unnamed Layer* 72) [Shuffle]_output: 38a25c2e
+196: 3dd69133
+197: 3dd69133
+(Unnamed Layer* 76) [Constant]_output: 396ebf65
+(Unnamed Layer* 77) [Matrix Multiply]_output: 3d8ddbd0
+(Unnamed Layer* 78) [Constant]_output: 38714d42
+(Unnamed Layer* 79) [Shuffle]_output: 38714d42
+198: 3d8ddc8e
+200: 3d8ddc8e
