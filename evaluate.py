@@ -14,13 +14,13 @@ def compare(time_torch, time_trt, out_torch, out_trt):
 def set_config():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '--pth_path', type=str, default='UFLD_torch2trt/tusimple_18.pth')
+        '--pth_path', type=str, default='./tusimple_18.pth')
     parser.add_argument(
-        '--trt_path', type=str, default='lane_fp16_static.trt')
+        '--trt_path', type=str, default='./lane_fp16_static.trt')
     parser.add_argument(
         '--torch2trt_path', type=str, default='UFLD_torch2trt/UFLD_trt.pth')
     parser.add_argument(
-        '--data_path', type=str, default='/home/stevenyan/TRT/Inference/5.jpg')
+        '--data_path', type=str, default='./5.jpg')
     parser.add_argument(
         '--dynamic', action='store_true')
     parser.add_argument(
