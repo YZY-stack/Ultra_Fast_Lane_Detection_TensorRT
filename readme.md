@@ -90,3 +90,6 @@ make
 ./lane_det -infer  ../imgs 
 
 ```
+
+## 四. trtexec
+trtexec  --explicitBatch --minShapes=1x3x288x800 --optShapes=1x3x288x800 --maxShapes=16x3x288x800 --shapes=4x3x288x800 --loadEngine=lane_fp32_dynamic.trt --noDataTransfers --dumpProfile --separateProfileRun
