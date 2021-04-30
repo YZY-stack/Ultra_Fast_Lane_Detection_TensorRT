@@ -21,12 +21,11 @@ def preprocessing(img):
     return img
 
 
-def demo_with_torch2trt(trt_file_path):
+def demo_with_torch2trt(trt_file_path, data_root):
     model_trt = TRTModule()
     model_trt.load_state_dict(torch.load(trt_file_path))
     row_anchor = tusimple_row_anchor
     img_w, img_h = 1280, 720
-    data_root = "/home/stevenyan/Ultra-Fast-Lane-Detection-ori/Inference/5.jpg"
 
     img_transforms = transforms.Compose([
             transforms.Resize((288, 800)),
@@ -74,5 +73,15 @@ def demo_with_torch2trt(trt_file_path):
     cv2.destroyAllWindows()
 
 
+def set_config():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--trt_path', type=str, default='lane_fp16_static.trt')
+    parser.add_argument(
+        '--data_path', type=str, default='/home/stevenyan/TRT/Inference/5.jpg')
+    args = parser.parse_args()
+    return args
+
+    
 if __name__ == "__main__":
     demo_with_torch2trt()
