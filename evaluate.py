@@ -42,12 +42,12 @@ if __name__ == "__main__":
     # do inference
     if torch2trt:
         torch_time, torch_out = inference_with_pytorch(pth_path, data_path)
-        torch2trt_time, torch2trt_out = inference_with_torch2trt(torch2trt_path)
+        torch2trt_time, torch2trt_out = inference_with_torch2trt(torch2trt_path, data_path)
         compare(torch_time, torch2trt_time, torch_out, torch2trt_out)
     else:
         torch_time, torch_out = inference_with_pytorch(pth_path, data_path)
         trt_time, trt_out = inference_with_trt(trt_path, data_path, dynamic_input)
         compare(torch_time, trt_time, torch_out, trt_out)
-        
+
     print("finished!")
 
