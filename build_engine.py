@@ -34,7 +34,7 @@ def set_config():
         default='calibration_data/testset/',
         help='set if you want to do int8 inference')
     parser.add_argument(
-        '--data_path', type=str, default='/home/stevenyan/TRT/Inference/5.jpg')
+        '--data_path', type=str, default='./5.jpg')
     args = parser.parse_args()
     return args
 
