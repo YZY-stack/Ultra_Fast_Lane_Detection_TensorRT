@@ -68,7 +68,7 @@ python3 demo_torch2trt.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_
 ```
 #### evaluated
 ```
-python3 evaluate.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG --torch2trt
+python3 evaluate.py --pth_path PATH_OF_PTH_MODEL --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG --torch2trt
 ```
 
 ## 三. C++ TensorRT API
