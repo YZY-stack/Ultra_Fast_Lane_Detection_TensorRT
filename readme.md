@@ -66,6 +66,10 @@ python3 export_trt.py
 ```
 python3 demo_torch2trt.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG
 ```
+#### evaluated
+```
+python3 evaluate.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG --torch2trt
+```
 
 ## 三. C++ TensorRT API
 ### 生成权重文件 
