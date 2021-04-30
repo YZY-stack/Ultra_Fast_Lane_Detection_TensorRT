@@ -53,18 +53,20 @@ python3 build_engine.py --onnx_path model_static.onnx --mode int8 --int8_data_pa
 python3 evaluate.py --pth_path PATH_OF_PTH_MODEL --trt_path PATH_OF_TRT_MODEL
 ```
 
-### 4. torch2trt 
+## 二. torch2trt
 #### 生成trt模型
 ```
 python3 export_trt.py
 
 ```
 #### torch2trt 预测
+（"torch2trt is an easy tool to convert pytorch model to tensorrt, you can check model details here: https://github.com/NVIDIA-AI-IOT/torch2trt"）<br/>
+ (torch2trt 是一个易于使用的PyTorch到TensorRT转换器) <br/>
 ```
-python3 inference_torch2trt.py
+python3 demo_with_torch2trt.py --trt_path PATH_OF_TRT_MODEL --data_path PATH_OF_YOUR_IMG
 ```
 
-## 二. C++ TensorRT API
+## 三. C++ TensorRT API
 ### 生成权重文件 
 ```
 python3 export_trtcy.py
