@@ -1,5 +1,5 @@
 # Ultra_Fast_Lane_Detection_TensorRT
-An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to accelerate. our model support for int8, dynamic input and profiling. (TRT-hackathon2021)<br/>
+An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to accelerate. our model support for int8, dynamic input and profiling. (Nvidia-Alibaba-TensoRT-hackathon2021)<br/>
 这是一个基于TensorRT加速UFLD的repo，包含PyThon ONNX Parser以及C++ TensorRT API版本, 还包括Torch2TRT版本, 
 对源码和论文感兴趣的请参见：https://github.com/cfzd/Ultra-Fast-Lane-Detection <br/> <br/>
 
@@ -92,4 +92,7 @@ make
 ```
 
 ## 四. trtexec
-trtexec  --explicitBatch --minShapes=1x3x288x800 --optShapes=1x3x288x800 --maxShapes=16x3x288x800 --shapes=4x3x288x800 --loadEngine=lane_fp32_dynamic.trt --noDataTransfers --dumpProfile --separateProfileRun
+#### test tensorrt_dynamic_model on terminal, for instance, for batch_size=BATCH_SIZE, just run:
+```
+trtexec  --explicitBatch --minShapes=1x3x288x800 --optShapes=1x3x288x800 --maxShapes=32x3x288x800 --shapes=BATCH_SIZEx3x288x800 --loadEngine=lane_fp32_dynamic.trt --noDataTransfers --dumpProfile --separateProfileRun
+```
