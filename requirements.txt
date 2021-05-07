@@ -1,0 +1,11 @@
+numpy
+opencv-python
+matplotlib
+PySpin
+scipy
+addict
+tqdm
+tensorboard
+onnx
+torch1.8.1
+torchvision==0.9.1
