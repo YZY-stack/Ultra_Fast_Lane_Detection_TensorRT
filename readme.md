@@ -4,7 +4,16 @@ An ultra fast tiny model for lane detection, using onnx_parser, TensorRTAPI to a
 对源码和论文感兴趣的请参见：https://github.com/cfzd/Ultra-Fast-Lane-Detection <br/> <br/>
 
 ## 一. PyThon ONNX Parser
-### 1. Build ONNX（将训练好的pth/pt模型转换为onnx）
+### 1. How to run
+```
+1) pip install -r requirements.txt
+
+2) TensorRT7.x wil be fine, and other version may got some errors
+
+2) For PyTorch, you can also try another version like 1.6, 1.5 or 1.4
+
+```
+### 2. Build ONNX（将训练好的pth/pt模型转换为onnx）
 ```
 1) static（生成静态onnx模型）:
 python3 torch2onnx.py onnx_dynamic_int8/configs/tusimple_4.py --test_model ./tusimple_18.pth 
@@ -16,7 +25,7 @@ python3 torch2onnx.py onnx_dynamic_int8/configs/tusimple_4.py --test_model ./tus
 
 ```
 
-### 2. Build trt engine（将onnx模型转换为TensorRT的推理引擎）<br/>
+### 3. Build trt engine（将onnx模型转换为TensorRT的推理引擎）<br/>
 We support many different types of engine export, such as static fp32, fp16, dynamic fp32, fp16, and int8 quantization<br/>
 我们支持多种不同类型engine的导出，例如：静态fp32、fp16，动态fp32、fp16，以及int8的量化<br/>
 
@@ -45,7 +54,7 @@ python3 build_engine.py --onnx_path model_static.onnx --mode int8 --int8_data_pa
 # （其中int8_data_path表示校正数据集)
 ```
 
-### 3. evaluate(compare)<br/>
+### 4. evaluate(compare)<br/>
 （If you want to compare the acceleration and accuracy of reasoning through TRT with using pytorch, you can run the script）<br/>
 （如果您想要比较通过TRT推理后，相对于使用PyTorch的加速以及精确度情况，可以运行该脚本）<br/>
 
@@ -57,6 +66,15 @@ python3 evaluate.py --pth_path PATH_OF_PTH_MODEL --trt_path PATH_OF_TRT_MODEL
   torch2trt is an easy tool to convert pytorch model to tensorrt, you can check model details here:  <br/>
   https://github.com/NVIDIA-AI-IOT/torch2trt <br/>
 （torch2trt 是一个易于使用的PyTorch到TensorRT转换器）<br/>
+### How to run
+```
+1) git clone https://github.com/NVIDIA-AI-IOT/torch2trt
+
+2) python setup.py install
+
+2) PyTorch >= 1.6 (other versions may got some errors)
+
+```
 #### 生成trt模型
 ```
 python3 export_trt.py
