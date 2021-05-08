@@ -28,7 +28,7 @@ def preprocessing(img):
 
 
 class EntropyCalibrator(trt.IInt8EntropyCalibrator2):
-    def __init__(self, training_data, cache_file, batch_size=16):
+    def __init__(self, training_data, cache_file, batch_size=1):
         trt.IInt8EntropyCalibrator2.__init__(self)
         self.cache_file = cache_file
         self.data = self.load_data(training_data)
